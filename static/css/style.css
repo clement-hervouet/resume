@@ -107,55 +107,126 @@ a:link:active{
         
       }
 
-    /* .resume .sidebar .data-block .formations .formation::after {
-      content: "";
-      width: 2px;
-      height: calc(100% - 17px);
-      background-color: #ffffff;
-      position: absolute;
-      left: -15px;
-      top: 17px;
-      transform: translateX(-50%);
-    }
+/* ___________________________[Done by Gemini]___________________________ */
 
-      .resume .sidebar .data-block .formations .formation::before {
-        content: "";
-        width: 2px;
-        height: calc(100% - 17px);
-        background-color: #ffffff;
-        position: absolute;
-        left: -15px;
-        top: 17px;
-        transform: translateX(-50%);
-      }
+/* 1. Container: Reset and space from the title */
+.resume .sidebar .data-block .formations {
+    padding-left: 0;
+    margin-top: 10px;
+}
 
-      .resume .sidebar .data-block .formations .formation::after {
-        content: "";
-        width: 7px;
-        height: 7px;
-        border-radius: 100%;
-        background-color: #ffffff;
-        position: absolute;
-        left: -15px;
-        top: 7.5px;
-        transform: translateX(-50%);
-      } */
+/* 2. The entries: The line now belongs to the items */
+.resume .sidebar .data-block .formation {
+    position: relative;
+    padding-left: 20px;
+    margin-left: 5px; 
+    /* This creates the line */
+    border-left: 2px solid white;
+    padding-bottom: 30px; /* Space between entries */
+}
+
+/* 3. The Dot */
+.resume .sidebar .data-block .formation::before {
+    content: "";
+    position: absolute;
+    left: -6px; 
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* 4. Erase the line ABOVE the first formation */
+.resume .sidebar .data-block .formation:first-of-type {
+    border-left: 2px solid transparent;
+}
+
+/* 5. Re-draw the line for the first item starting ONLY from the dot downward */
+.resume .sidebar .data-block .formation:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 10px; /* Starts exactly at the dot */
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+}
+
+/* 6. Ensure the last item keeps its line going downward */
+.resume .sidebar .data-block .formation:last-child {
+    border-left: 2px solid white;
+    padding-bottom: 50px; /* Adjust this to control how far the line goes down */
+}
+
+/* ___________________________[End of done by Gemini]___________________________ */
+
+
 
   .resume .content {
     grid-column: 2 / 4;
 
-    padding: 10%;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+    gap: 30px;
+
+    background-color: var(--bright-secondary-color);
 
     height: fit-content;
+  }
 
+  .resume .content .data-block{
+    background-color: aliceblue;
+
+    width: 47%;
+  }
+
+  .resume .content .data-block .data-block-header {
     display: flex;
     flex-direction: row;
 
-    background-color: var(--bright-secondary-color);
+    align-items: center;
+
+    gap: 10px;
   }
 
-  
+    .resume .content .data-block .data-block-header h2 {
+      color: var(--accent-color);
+    }
 
+
+  .resume .content .data-block .data-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .resume .content .data-block .data-block-content span:not(:last-child)::after {
+    content: "•";
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+    .resume .content .data-block .data-block-content .exp {
+      background-color: #868380;
+    }
+
+    .resume .content .data-block .data-block-content .comp {
+      background-color: #868380;
+    }
+
+    .resume .content .data-block .data-block-content .inter {
+      background-color: #868380;
+    }
+
+    .resume .content .data-block .data-block-content .proj {
+      background-color: #868380;
+    }  
 
 @page {
   size: A4;
