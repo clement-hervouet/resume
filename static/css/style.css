@@ -18,6 +18,31 @@
     --accent-color: #AD794F;
 }
 
+a:link{
+  cursor: pointer;
+
+  color: white;
+  text-decoration: underline;
+}
+a:link:hover{
+  cursor: pointer;
+
+  color: black;
+  text-decoration: underline dotted;
+}
+a:link:visited{
+  cursor: pointer;
+
+  color:black;
+  text-decoration: underline;
+}
+a:link:active{
+  cursor: pointer;
+
+  color:grey;
+  text-decoration: underline;
+}
+
   .resume{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -50,6 +75,8 @@
     padding: 5%;
 
     background-color: var(--bright-primary-color);
+
+    align-content: center;
   }
 
   .resume .sidebar {
@@ -59,21 +86,60 @@
 
     height: fit-content;
 
-    display: flexbox;
+    display: flex;
     flex-direction: column;
 
     background-color: var(--dark-secondary-color);
     border-bottom-right-radius: 60px;
 
   }
-
-    .resume .sidebar .data-block .contact{
+    .resume .sidebar .data-block .contacts{
       display: flex;
       gap: 10px;
-      align-items: center;
-      vertical-align: text-top;
+      flex-direction: column;
       
     }
+      .resume .sidebar .data-block .contacts .contact{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        vertical-align: text-top;
+        
+      }
+
+    /* .resume .sidebar .data-block .formations .formation::after {
+      content: "";
+      width: 2px;
+      height: calc(100% - 17px);
+      background-color: #ffffff;
+      position: absolute;
+      left: -15px;
+      top: 17px;
+      transform: translateX(-50%);
+    }
+
+      .resume .sidebar .data-block .formations .formation::before {
+        content: "";
+        width: 2px;
+        height: calc(100% - 17px);
+        background-color: #ffffff;
+        position: absolute;
+        left: -15px;
+        top: 17px;
+        transform: translateX(-50%);
+      }
+
+      .resume .sidebar .data-block .formations .formation::after {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        left: -15px;
+        top: 7.5px;
+        transform: translateX(-50%);
+      } */
 
   .resume .content {
     grid-column: 2 / 4;
@@ -82,12 +148,13 @@
 
     height: fit-content;
 
-    display: flexbox;
+    display: flex;
     flex-direction: row;
 
     background-color: var(--bright-secondary-color);
   }
 
+  
 
 
 @page {
