@@ -16,18 +16,19 @@
     --dark-secondary-color: #868380;
 
     --accent-color: #AD794F;
+    --title: #865934;
 }
 
 a:link{
   cursor: pointer;
 
-  color: white;
+  color: black;
   text-decoration: underline;
 }
 a:link:hover{
   cursor: pointer;
 
-  color: black;
+  color: var(--accent-color);
   text-decoration: underline dotted;
 }
 a:link:visited{
@@ -46,14 +47,14 @@ a:link:active{
   .resume{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
+    grid-auto-rows: 33.3333vw;
     gap: 0px;
 
     height: 100%;
     width: 100%;
 
     /*aspect-ratio: 1.414/1;*/
-    background-color: rgb(241, 163, 163);
+    /* background-color: rgb(241, 163, 163); */
   }
 
   .resume .photo{
@@ -70,7 +71,7 @@ a:link:active{
     }
 
   .resume .topbar {
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
 
     padding: 5%;
 
@@ -78,6 +79,13 @@ a:link:active{
 
     align-content: center;
   }
+
+    .resume .topbar .note ul{
+      font-size: large;
+      list-style-position: inside;
+
+      padding-left: 7%;
+    }
 
   .resume .sidebar {
     grid-column: 1;
@@ -92,6 +100,14 @@ a:link:active{
     background-color: var(--dark-secondary-color);
     border-bottom-right-radius: 60px;
 
+    .data-block{
+      margin-bottom: 30px;
+
+      ul{
+        list-style-position: inside;
+        padding-left: 7%;
+      }
+    }
   }
     .resume .sidebar .data-block .contacts{
       display: flex;
@@ -104,28 +120,29 @@ a:link:active{
         gap: 10px;
         align-items: center;
         vertical-align: text-top;
+
+        img{
+          width: 24px;
+        }
         
       }
 
-/* ___________________________[Done by Gemini]___________________________ */
 
-/* 1. Container: Reset and space from the title */
 .resume .sidebar .data-block .formations {
     padding-left: 0;
     margin-top: 10px;
 }
 
-/* 2. The entries: The line now belongs to the items */
+
 .resume .sidebar .data-block .formation {
     position: relative;
     padding-left: 20px;
     margin-left: 5px; 
-    /* This creates the line */
     border-left: 2px solid white;
-    padding-bottom: 30px; /* Space between entries */
+    padding-bottom: 20px;
 }
 
-/* 3. The Dot */
+
 .resume .sidebar .data-block .formation::before {
     content: "";
     position: absolute;
@@ -138,34 +155,33 @@ a:link:active{
     z-index: 2;
 }
 
-/* 4. Erase the line ABOVE the first formation */
+
 .resume .sidebar .data-block .formation:first-of-type {
     border-left: 2px solid transparent;
 }
 
-/* 5. Re-draw the line for the first item starting ONLY from the dot downward */
+
 .resume .sidebar .data-block .formation:first-of-type::after {
     content: "";
     position: absolute;
     left: -2px;
-    top: 10px; /* Starts exactly at the dot */
+    top: 10px;
     bottom: 0;
     width: 2px;
     background-color: white;
 }
 
-/* 6. Ensure the last item keeps its line going downward */
+
 .resume .sidebar .data-block .formation:last-child {
     border-left: 2px solid white;
-    padding-bottom: 50px; /* Adjust this to control how far the line goes down */
+    padding-bottom: 20px;
 }
 
-/* ___________________________[End of done by Gemini]___________________________ */
 
 
 
   .resume .content {
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
 
     padding: 5%;
     display: flex;
@@ -174,13 +190,13 @@ a:link:active{
     
     gap: 30px;
 
-    background-color: var(--bright-secondary-color);
+    background-color: white;
 
     height: fit-content;
   }
 
   .resume .content .data-block{
-    background-color: aliceblue;
+    /* background-color: white; */
 
     width: 47%;
   }
@@ -206,30 +222,36 @@ a:link:active{
     padding: 10px;
   }
 
+      .resume .content .data-block .data-block-content h3 {
+        color: var(--accent-color);
+      }
+
   .resume .content .data-block .data-block-content span:not(:last-child)::after {
     content: "•";
     margin-left: 5px;
     margin-right: 5px;
 }
 
-    .resume .content .data-block .data-block-content .exp {
-      background-color: #868380;
-    }
 
-    .resume .content .data-block .data-block-content .comp {
-      background-color: #868380;
-    }
+footer{
+  padding: 10px;
 
-    .resume .content .data-block .data-block-content .inter {
-      background-color: #868380;
-    }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 
-    .resume .content .data-block .data-block-content .proj {
-      background-color: #868380;
-    }  
+  img{
+    width: 20px;
+
+    vertical-align: bottom;
+  }
+}
+
+
 
 @page {
-  size: A4;
+  size: a4;
   margin: 0;
 }
 
@@ -240,6 +262,5 @@ a:link:active{
   }
 
 
-  /* ... the rest of the rules ... */
 }
 
