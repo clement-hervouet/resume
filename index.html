@@ -8,9 +8,9 @@
   </head>
   <body>
     <div class="resume">
-      <div class="photo"><img src="static/assets/photo.jpg" alt="portrait"></div>
+      <div class="photo printable"><img src="static/assets/photo_HD.png" alt="portrait"></div>
 
-      <div class="topbar">
+      <div class="topbar printable">
         <h1><b>Clément HERVOUET</b></h1>
         <br>
         <h2>Recherche Alternance en développement Web</h2>
@@ -27,7 +27,7 @@
         <h4><i>On dit souvent de moi que je suis </i> "Intéréssant, intéréssé, compétent et agréable"</h4>
       </div>
 
-      <div class="sidebar">
+      <div class="sidebar printable">
 
         <div class="data-block">
 
@@ -88,7 +88,7 @@
 
       </div>
 
-      <div class="content">
+      <div class="content printable">
         
         <!--EXPERIENCES-->
         <div class="data-block">
@@ -108,7 +108,7 @@
               <p>Découvertes des métiers du transport</p>
             </div>
 
-            <div class="exp">
+            <div class="exp not-printable">
               <h3>Delta-Breizh - VANNES</h3>
               <h4>Stage - 2 semaines - 2024</h4>
               <p>Ventes et conseils à particuliers</p>
@@ -152,23 +152,23 @@
               <h3>SelfHosted server</h3>
               <p>Création et maintenance d'un serveur multi-usage sous Ubuntu-Server</p>
               <p>Mise en place de conteneurisation via Docker</p>
-              <p style="font-size: small;"><i>Vous vous trouvez sur ce serveur en ce moment même!</i></p>
+              <p class="not-printable" style="font-size: small;"><i>Vous vous trouvez sur ce serveur en ce moment même!</i></p>
 
             </div>
 
             <div class="proj">
               <h3>POR2AGEN</h3>
-              <b>Programme d'Optimisation de la Répartition des Acteurs par Agorithmes GENétiques</b>
+              <p><b>Programme d'Optimisation de la Répartition des Acteurs par Agorithmes GENétiques</b></p>
               <p>Réponse à la problématique de désignation des arbitres sur les matchs de basket</p>
-              <i>C# , <a href="https://github.com/clement-hervouet/POR2AGEN">GitHub</a></i>
+              <p><i>C# <span class="not-printable"> , <a href="https://github.com/clement-hervouet/POR2AGEN">GitHub</a></span></i></p>
               
             </div>
             <div class="proj">
               <h3>ARB-Archives</h3>
               <p>Outil WEB permettant au arbitres d'enregistrer des informations sur leurs rencontres.</p>
-              <i>HTML / CSS / JS / PHP / MySQL , <a href="https://github.com/clement-hervouet/ARB-Archives">GitHub</a></i>
+              <p><i>HTML / CSS / JS / PHP / MySQL<span class="not-printable"> , <a href="https://github.com/clement-hervouet/ARB-Archives">GitHub</a></span></i></p>
             </div>
-            <div class="proj">
+            <div class="proj not-printable">
               <h3>Jardinière intelligente</h3>
               <p>Jardinière intelligente, basé sur Arduino Uno</p>
               <p><i>Info: électronique , C++</i></p>
@@ -178,7 +178,7 @@
               <h3>Gestion de serres agricole</h3>
               <h4>Projet de fin de BTS</h4>
               <p>Surveillance, Automatisation, Interface Web, Gestion d'utilisateurs, Réseaux</p>
-              <i>HTML / CSS / JS / MySQL / PHP / Python / C++ / Networking</i>
+              <p><i>HTML / CSS / JS / MySQL / PHP / Python / C++ / Networking</i></p>
             </div>
           </div>
         </div>        
@@ -255,10 +255,10 @@
     </div>
 
   </body>
-  <footer>
+  <footer class="not-printable">
   <i>
     <p>©2026 Clément HERVOUET</p>
-    <p>Vous souhaitez la version PDF de ce CV? <b>Ctrl + P</b></p>
+    <p>Vous souhaitez la version PDF (modifié) de ce CV? <b>Ctrl + P</b></p>
     <p>Fait avec le <img src="/static/icons/heart.svg"> et sans IA <img src="/static/icons/robot-off.svg"></p>
   </i>
   </footer>
