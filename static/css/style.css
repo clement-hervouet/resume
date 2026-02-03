@@ -106,6 +106,10 @@ a:link:active{
         list-style-position: inside;
         padding-left: 7%;
       }
+
+      .gauge {
+        width: 100%;
+      }
     }
   }
     .resume .sidebar .data-block .contacts{
@@ -270,6 +274,10 @@ footer{
   .resume .sidebar {
     border-radius: 0;
   }
+
+  .resume .sidebar .data-block .gauge {
+    padding-right: 30%;
+  }
   .resume .content {
     flex-direction: column;
   }
@@ -299,7 +307,9 @@ footer{
   }
 }
 
-
+  .resume .sidebar .data-block .gauge {
+    width: 90%;
+  }
 
 @page {
   size: a4;
